@@ -1,0 +1,54 @@
+-- Step 1: Create Database
+CREATE DATABASE CampusEdgeDB;
+USE CampusEdgeDB;
+
+-- Step 2: Create Tables
+CREATE TABLE Students (
+       StudentID INT PRIMARY KEY,
+       FirstName VARCHAR(50) NOT NULL,
+       LastName VARCHAR(50) NOT NULL,
+       Email VARCHAR(100) UNIQUE
+);
+
+CREATE TABLE Courses (
+       CourseID INT PRIMARY KEY,
+       CourseName VARCHAR(100) NOT NULL,
+       Credits INT NOT NULL
+);
+
+CREATE TABLE Enrollments (
+       EnrollmentID INT PRIMARY KEY,
+       StudentID INT, 
+       CourseID INT, 
+       Grade VARCHAR(2), 
+       FOREIGN KEY (StudentID) REFERENCES Students(StudentID),
+       FOREIGN KEY (CourseID) REFERENCES Courses(CourseID),
+       CHECK (Grade IN ('A', 'B', 'C', 'D', 'F', NULL))
+);
+
+-- Students
+INSERT INTO Student VALUES
+(1, 'Alice', 'Wong', 'alice@campusedge.com'),
+(2, 'Brian', 'Kim', 'brian@campusedge.com'),
+(3, 'Carla', 'Lopez', 'carla@campusedge.com'),
+(4, 'David', 'Lee', 'david@campusedge.com'),
+(5, 'Eva', 'Singh', 'eva@campusedge.com');
+
+-- Courses
+INSERT INTO Courses VALUES
+(101, 'Intro to SQL', 3),
+(102, 'Database Design', 4),
+(103, 'Web Development Basics', 3);
+
+-- Enrollments 
+INSERT INTO Enrollments VALUES
+(1, 1, 101, 'A'),
+(2, 1, 102, 'B'),
+(3, 2, 101, 'A'),
+(4, 2, 103, 'C'),
+(5, 3, 101, 'B'),
+(6, 3, 102, 'A'),
+(7, 3, 103, 'A'),
+(8, 4, 102, 'D'),
+(9, 5, 103, NULL),
+(10, 5, 101, 'B');
