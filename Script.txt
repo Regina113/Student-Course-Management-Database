@@ -27,28 +27,43 @@ CREATE TABLE Enrollments (
 );
 
 -- Students
-INSERT INTO Student VALUES
-(1, 'Alice', 'Wong', 'alice@campusedge.com'),
-(2, 'Brian', 'Kim', 'brian@campusedge.com'),
-(3, 'Carla', 'Lopez', 'carla@campusedge.com'),
-(4, 'David', 'Lee', 'david@campusedge.com'),
-(5, 'Eva', 'Singh', 'eva@campusedge.com');
+INSERT INTO Students(StudentID, FirstName, LastName, Email)
+            VALUES (1, 'Alice', 'Wong', 'alice@campusedge.com');
+INSERT INTO Students(StudentID, FirstName, LastName, Email)
+            VALUES(2, 'Brian', 'Kim', 'brian@campusedge.com');
+INSERT INTO Students(StudentID, FirstName, LastName, Email)
+            VALUES(3, 'Carla', 'Lopez', 'carla@campusedge.com');
+INSERT INTO Students(StudentID, FirstName, LastName, Email)
+            VALUES(4, 'David', 'Lee', 'david@campusedge.com');
+INSERT INTO Students(StudentID, FirstName, LastName, Email)
+            VALUES(5, 'Eva', 'Singh', 'eva@campusedge.com');
 
 -- Courses
-INSERT INTO Courses VALUES
-(101, 'Intro to SQL', 3),
-(102, 'Database Design', 4),
-(103, 'Web Development Basics', 3);
+INSERT INTO Courses(CourseID, CourseName, Credits)
+            VALUES(101, 'Intro to SQL', 3);
+INSERT INTO Courses(CourseID, CourseName, Credits)
+            VALUES(102, 'Database Design', 4);
+INSERT INTO Courses(CourseID, CourseName, Credits)
+            VALUES(103, 'Web Development Basics', 3);
 
 -- Enrollments 
-INSERT INTO Enrollments VALUES
-(1, 1, 101, 'A'),
-(2, 1, 102, 'B'),
-(3, 2, 101, 'A'),
-(4, 2, 103, 'C'),
-(5, 3, 101, 'B'),
-(6, 3, 102, 'A'),
-(7, 3, 103, 'A'),
-(8, 4, 102, 'D'),
-(9, 5, 103, NULL),
-(10, 5, 101, 'B');
+INSERT INTO Enrollments(EnrollmentID, StudentID, CourseID, Grade)
+            VALUES(1, 1, 101, 'A');
+INSERT INTO Enrollments(EnrollmentID, StudentID, CourseID, Grade)
+            VALUES(2, 1, 102, 'B');
+INSERT INTO Enrollments(EnrollmentID, StudentID, CourseID, Grade)
+            VALUES(3, 2, 101, 'A');
+INSERT INTO Enrollments(EnrollmentID, StudentID, CourseID, Grade)
+            VALUES(4, 2, 103, 'C');
+INSERT INTO Enrollments(EnrollmentID, StudentID, CourseID, Grade)
+            VALUES(5, 3, 101, 'B');
+INSERT INTO Enrollments(EnrollmentID, StudentID, CourseID, Grade)
+            VALUES(6, 3, 102, 'A');
+INSERT INTO Enrollments(EnrollmentID, StudentID, CourseID, Grade)
+            VALUES(7, 3, 103, 'A');
+INSERT INTO Enrollments(EnrollmentID, StudentID, CourseID, Grade)
+            VALUES(8, 4, 102, 'D');
+INSERT INTO Enrollments(EnrollmentID, StudentID, CourseID, Grade)
+            VALUES(9, 5, 103, NULL);
+INSERT INTO Enrollments(EnrollmentID, StudentID, CourseID, Grade)
+            VALUES(10, 5, 101, 'B');
